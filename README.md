@@ -1,6 +1,6 @@
 # Sworm
 
-Wrapper for [`SQLite`](https://github.com/stephencelis/SQLite.swift) ,it makes life easier.
+The fantastic ORM library of [SQLite](https://github.com/stephencelis/SQLite.swift) for Swift, makes life easier.
 
 ### Sample Code
 
