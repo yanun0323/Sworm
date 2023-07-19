@@ -45,8 +45,21 @@ extension SQL {
     }
     
     private static func filePath(_ filename: String) -> URL {
-        return try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-            .appendingPathComponent("\(filename).sqlite")
+        // set the path corresponding to application support
+        let path = NSSearchPathForDirectoriesInDomains(
+            .applicationSupportDirectory, .userDomainMask, true
+        ).first! + "/" + Bundle.main.bundleIdentifier!
+        
+        // create parent directory inside application support if it doesn’t exist
+        try! FileManager.default.createDirectory(
+            atPath: path, withIntermediateDirectories: true, attributes: nil
+        )
+        
+        #if DEBUG
+        print(path)
+        #endif
+        
+        return URL(string: "\(path)/\(filename).sqlite3")!
     }
 }
 
@@ -84,7 +97,7 @@ extension SQL {
         return [
             Element.id <- id,
             Element.name <- name,
-            Element.value<- value
+            Element.value <- value
         ]
     }
  }
