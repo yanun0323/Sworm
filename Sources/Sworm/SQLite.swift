@@ -36,7 +36,7 @@ extension SQL {
         if isMock && (name == nil || name!.isEmpty) {
             conn = try! Connection(.inMemory)
         } else {
-            conn = try! Connection(filePath(dbName).absoluteString)
+            conn = try! Connection(filePath(dbName))
         }
         conn.busyTimeout = 5
         
@@ -44,7 +44,7 @@ extension SQL {
         return db!
     }
     
-    private static func filePath(_ filename: String) -> URL {
+    private static func filePath(_ filename: String) -> String {
         // set the path corresponding to application support
         let path = NSSearchPathForDirectoriesInDomains(
             .applicationSupportDirectory, .userDomainMask, true
@@ -59,7 +59,7 @@ extension SQL {
         print(path)
         #endif
         
-        return URL(string: "\(path)/\(filename).sqlite3")!
+        return "\(path)/\(filename).sqlite3"
     }
 }
 
