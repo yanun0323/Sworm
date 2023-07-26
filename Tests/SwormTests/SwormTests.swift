@@ -35,6 +35,19 @@ final class SwormTests: XCTestCase {
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
     }
+    
+    func testHelperDecimal() throws {
+        let testCases = [Decimal]([123, 223.445, -8534, -854.6024, -0.0054, 0.0054])
+        testCases.forEach { t in
+            testHelperDecimalCase(t)
+        }
+    }
+    
+    func testHelperDecimalCase(_ d: Decimal) {
+        let data = d.datatypeValue
+        let decimal = Decimal.fromDatatypeValue(data)
+        XCTAssertEqual(decimal, d)
+    }
 }
 
 struct Element {
