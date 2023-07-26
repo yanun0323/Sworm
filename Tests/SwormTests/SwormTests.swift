@@ -1,4 +1,5 @@
 import XCTest
+import SwiftUI
 import SQLite
 @testable import Sworm
 
@@ -47,6 +48,35 @@ final class SwormTests: XCTestCase {
         let data = d.datatypeValue
         let decimal = Decimal.fromDatatypeValue(data)
         XCTAssertEqual(decimal, d)
+    }
+    
+    func testHelperColor() throws {
+        let testCases = [Color]([.black, .blue, .brown, .red, .init(red: 0.95, green: 0.13, blue: 0.55)])
+        testCases.forEach { c in
+            testHelperColorCase(c)
+        }
+    }
+    
+    func testHelperColorCase(_ c: Color) {
+        let data = c.datatypeValue
+        let color = Color.fromDatatypeValue(data)
+        XCTAssertEqual(c.components!.red.floor(), color.components!.red.floor())
+        XCTAssertEqual(c.components!.green.floor(), color.components!.green.floor())
+        XCTAssertEqual(c.components!.blue.floor(), color.components!.blue.floor())
+        XCTAssertEqual(c.components!.alpha.floor(), color.components!.alpha.floor())
+    }
+}
+
+extension CGFloat {
+    func floor(_ digit: Int = 5) -> CGFloat {
+        if digit <= 0 { return self }
+        var (up, down) = (CGFloat(1), CGFloat(1))
+        for _ in 0 ..< digit {
+            up *= 10
+            down *= 0.1
+        }
+        
+        return CGFloat(Int(self*up.rounded()-0.5))*down
     }
 }
 
