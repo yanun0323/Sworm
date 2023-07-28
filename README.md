@@ -33,9 +33,6 @@ extension Element: Migrator {
     }
 }
 
-// init SQLite database
-let db = SQL.setup(dbName: "database", isMock: false)
-
 // setter is for quick insert/update/upsert
 func setter() -> [Setter] {
     return [
@@ -48,6 +45,13 @@ func setter() -> [Setter] {
 
 #### Usage
 ```swift
+// init SQLite database and migrate tables with structures
+// before you do every thing
+func setup() {
+    let db = SQL.setup(dbName: "database", isMock: false)
+    db.migrate([Element.self])
+}
+
 // query
 func getElement(_ id: Int64) throws -> Element? {
     let result = try SQL.getDriver().query(Element.self) { $0.where(Record.id == id) }
