@@ -19,20 +19,23 @@ final class SwormTests: XCTestCase {
         XCTAssertNoThrow(insertedID = try db.insert(elem))
         XCTAssertEqual(1, insertedID)
         
-        var rows = AnySequence<Row>([])
-        XCTAssertNoThrow(rows = try db.query(Element.self, { $0.where(Element.value == 25)}))
-        var found = Element(id: 0, name: "", value: 0)
-        for row in rows {
-            XCTAssertNoThrow(found = try Element.parse(row))
-        }
+        var result = [Element]()
+        XCTAssertNoThrow(result = try db.query(Element.self, { $0.where(Element.value == 25) }))
+        
+        XCTAssertEqual(1, result.count)
+        guard let found = result.first else { throw XCTestError(.failureWhileWaiting) }
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
         
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Not Yanun", value: 30)
-        XCTAssertNoThrow(updatedCount = try db.update(changed, where: Element.id == changed.id))
+        XCTAssertNoThrow(updatedCount = try db.update(changed, { $0.where(Element.id == changed.id )}))
         XCTAssertEqual(1, updatedCount)
         
+        var upsertID: Int64 = 0
+        let upsert = Element(id: insertedID, name: "Not Yanun", value: 30)
+        XCTAssertNoThrow(upsertID = try db.upsert(upsert, primaryKey: Element.id) { $0.where(Element.id == upsert.id) } )
+        XCTAssertEqual(insertedID, upsertID)
         
         var deleteCount: Int = 0
         XCTAssertNoThrow(deleteCount = try db.delete(Element.self) { $0.where(Element.id == found.id) })
@@ -48,19 +51,23 @@ final class SwormTests: XCTestCase {
         XCTAssertNoThrow(insertedID = try dao.insert(elem))
         XCTAssertEqual(1, insertedID)
         
-        var rows = AnySequence<Row>([])
-        XCTAssertNoThrow(rows = try dao.query(Element.self, { $0.where(Element.value == 25)}))
-        var found = Element(id: 0, name: "", value: 0)
-        for row in rows {
-            XCTAssertNoThrow(found = try Element.parse(row))
-        }
+        var result = [Element]()
+        XCTAssertNoThrow(result = try dao.query(Element.self, { $0.where(Element.value == 25) }))
+        
+        XCTAssertEqual(1, result.count)
+        guard let found = result.first else { throw XCTestError(.failureWhileWaiting) }
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
         
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Not Yanun", value: 30)
-        XCTAssertNoThrow(updatedCount = try dao.update(changed, where: Element.id == changed.id))
+        XCTAssertNoThrow(updatedCount = try dao.update(changed, { $0.where(Element.id == changed.id )}))
         XCTAssertEqual(1, updatedCount)
+        
+        var upsertID: Int64 = 0
+        let upsert = Element(id: insertedID, name: "Not Yanun", value: 30)
+        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, primaryKey: Element.id) { $0.where(Element.id == upsert.id) } )
+        XCTAssertEqual(insertedID, upsertID)
         
         
         var deleteCount: Int = 0
@@ -117,7 +124,7 @@ struct Element {
     var value: Int
 }
 
-extension Element: Migrator {
+extension Element: Model {
     static var table: Tablex { Tablex("elements") }
     static var id = Expression<Int64>("id")
     static var name = Expression<String>("name")
