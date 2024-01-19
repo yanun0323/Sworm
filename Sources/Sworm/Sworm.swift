@@ -2,46 +2,48 @@ import SQLite
 import SwiftUI
 
 public typealias Tablex = SQLite.Table
+public typealias DB = SQLite.Connection
 
 // MARK: SQLite Instance
 /**
- Property Wrapper for SQLite instance
+ property wrapper for SQLite instance
  
  ```
  // initial the SQL before use it
- let db = SQL.setup(dbName: "database", isMock: false) /* use in memory sqlite database if isMock is true*/
+ let db = Sworm.setup(dbName: "database", isMock: false) /* use in memory sqlite database if isMock is true*/
  // get db
- let db = SQL.getDriver()
+ let db = Sworm.getDriver()
  ```
  */
-public struct SQL {
-    private static var db: Connection? = nil
+public struct Sworm {
+    private static var _db: DB? = nil
 }
 
-extension SQL {
-    /** Get sqlite database instance. if no exist, create a in memory sqlite database  connection */
-    public static func getDriver() -> Connection {
-        if let conn = db {
+extension Sworm {
+    /** get sqlite database instance. if no exist, create a in memory sqlite database  connection */
+    public static var db: DB {
+        if let conn = _db {
             return conn
         }
         return self.setup(isMock: true)
     }
-    /** Create a new sqlite database instance, use in memory sqlite database if isMock is true */
-    public static func setup(dbName name: String? = nil, isMock: Bool) -> Connection {
+    
+    /** create a new sqlite database instance, use in memory sqlite database if isMock is true */
+    public static func setup(dbName name: String? = nil, isMock: Bool) -> DB {
         var dbName = "production"
         if let name = name, !name.isEmpty {
             dbName = name
         }
-        let conn: Connection
+        let conn: DB
         if isMock && (name == nil || name!.isEmpty) {
-            conn = try! Connection(.inMemory)
+            conn = try! DB(.inMemory)
         } else {
-            conn = try! Connection(filePath(dbName))
+            conn = try! DB(filePath(dbName))
         }
         conn.busyTimeout = 5
         
-        db = conn
-        return db!
+        _db = conn
+        return _db!
     }
     
     private static func filePath(_ filename: String) -> String {
@@ -95,7 +97,6 @@ extension SQL {
  
     static func setter() -> [Setter] {
         return [
-            Element.id <- id,
             Element.name <- name,
             Element.value <- value
         ]
@@ -106,8 +107,9 @@ extension SQL {
  */
 public protocol Migrator {
     static var table: Tablex { get }
+    
     /**
-     Migrate sqlite datebase schema
+     migrate sqlite datebase schema
      ```
      // Sample
      static func migrate(_ conn: Connection) throws {
@@ -119,11 +121,11 @@ public protocol Migrator {
         try conn.run(table.createIndex(name, ifNotExists: true))
      }
      ```
-     
      */
-    static func migrate(_:Connection) throws
+    static func migrate(_:DB) throws
+    
     /**
-     Parse object from result row
+     parse object from result row
      ```
      // Sample
      static func parse(_ r: Row) throws -> Element {
@@ -138,12 +140,12 @@ public protocol Migrator {
     static func parse(_:Row) throws -> Self
     
     /**
-     Use for Insert/ Update/ Upsert function
+     setter for insert, update, upsert function
+     - Note: DO NOT set primary key in setter.
      ```
      // Sample
      static func setter() -> [Setter] {
         return [
-            Element.id <- id,
             Element.name <- name,
             Element.value<- value
         ]
@@ -154,9 +156,9 @@ public protocol Migrator {
 }
 
 // MARK: Connection
-extension Connection {
-    /** Run table migrations */
-    public func migrate(_ migrators: [Migrator.Type]) {
+extension DB {
+    /** run table migrations */
+    public func migrate(_ migrators: Migrator.Type...) {
         do {
             for m in migrators {
                 try m.migrate(self)
@@ -165,18 +167,39 @@ extension Connection {
             print("migrate tables, err: \(error)")
         }
     }
-    /** Query Element Properties */
-    public func query<V: Value>(_ model: Migrator.Type, _ query: ((Tablex) -> ScalarQuery<V>)) throws -> V {
+    
+    /// runs a transaction with the given mode.
+    ///
+    /// - Note: Transactions cannot be nested. To nest transactions, see
+    ///   `savepoint()`, instead.
+    ///
+    /// - Parameters:
+    ///
+    ///   - mode: The mode in which a transaction acquires a lock.
+    ///
+    ///     Default: `.deferred`
+    ///
+    ///   - block: A closure to run SQL statements within the transaction.
+    ///     The transaction will be committed when the block returns. The block
+    ///     must throw to roll the transaction back.
+    ///
+    /// - Throws: `Result.Error`, and rethrows.
+    public func tx(_ mode: TransactionMode = .deferred, action: () throws -> Void) throws {
+        try self.transaction(mode, block: action)
+    }
+    
+    /** query element properties */
+    public func query<V: Value>(_ model: Migrator.Type, _ query: @escaping ((Tablex) -> ScalarQuery<V>)) throws -> V {
         return try self.scalar(query(model.table))
     }
     
-    /** Query Element */
-    public func query(_ model: Migrator.Type, _ query: ((Tablex) -> QueryType)) throws -> AnySequence<Row> {
+    /** query element */
+    public func query(_ model: Migrator.Type, _ query: @escaping ((Tablex) -> QueryType)) throws -> AnySequence<Row> {
         return try self.prepare(query(model.table))
     }
     
-    /** Print Schema of Inputed Table Name */
-    public func PrintSchema(_ tableName: String) throws {
+    /** print schema of inputed table name */
+    public func printSchema(_ tableName: String) throws {
         let columns = try self.schema.columnDefinitions(table: tableName)
         print("'\(tableName)' schema:")
         for column in columns {
@@ -184,29 +207,29 @@ extension Connection {
         }
     }
     
-    /** Insert Element Using Defined Setter */
+    /** insert element using defined setter */
     public func insert(_ m: Migrator) throws -> Int64 {
         return try self.run(T(m).table.insert(m.setter()))
     }
     
-    /** Upsert Element Using Defined Setter */
-    public func upsert(_ m: Migrator, primaryKey pk: Expressible, `where`: Expression<Bool>) throws -> Int64 {
-        return try SQL.getDriver().run(T(m).table.where(`where`).upsert(m.setter(), onConflictOf: pk, set: m.setter()))
+    /** upsert element using defined setter */
+    public func upsert(_ m: Migrator, primaryKey pk: Expressible, `where` filter: Expression<Bool>) throws -> Int64 {
+        return try self.run(T(m).table.where(filter).upsert(m.setter(), onConflictOf: pk, set: m.setter()))
     }
     
-    /** Update Element Using Defined Setter */
-    public func update(_ m: Migrator, `where`: Expression<Bool>) throws -> Int {
-        return try SQL.getDriver().run(T(m).table.where(`where`).update(m.setter()))
+    /** update element using defined setter */
+    public func update(_ m: Migrator, `where` filter: Expression<Bool>) throws -> Int {
+        return try self.run(T(m).table.where(filter).update(m.setter()))
     }
     
-    /** Delete Element */
-    public func delete(_ model: Migrator.Type, _ query: ((Tablex) -> QueryType)) throws -> Int {
+    /** delete element */
+    public func delete(_ model: Migrator.Type, _ query: @escaping ((Tablex) -> QueryType)) throws -> Int {
         return try self.run(query(model.table).delete())
     }
 }
 
-fileprivate extension Connection {
-    private func T(_ m: Migrator) -> Migrator.Type {
+fileprivate extension DB {
+    func T(_ m: Migrator) -> Migrator.Type {
         return type(of: m)
     }
 }

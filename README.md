@@ -34,9 +34,9 @@ extension Element: Migrator {
 }
 
 // setter is for quick insert/update/upsert
+// please DO NOT set primary key in setter
 func setter() -> [Setter] {
     return [
-        Element.id <- id,
         Element.name <- name,
         Element.age <- age
     ]
@@ -48,13 +48,13 @@ func setter() -> [Setter] {
 // init SQLite database and migrate tables with structures
 // before you do every thing
 func setup() {
-    let db = SQL.setup(dbName: "database", isMock: false)
-    db.migrate([Element.self])
+    let db = Sworm.setup(dbName: "database", isMock: false)
+    db.migrate(Element.self)
 }
 
 // query
 func getElement(_ id: Int64) throws -> Element? {
-    let result = try SQL.getDriver().query(Element.self) { $0.where(Record.id == id) }
+    let result = try Sworm.db.query(Element.self) { $0.where(Record.id == id) }
     for row in result {
         return try Element.parse(row)
     }
@@ -62,7 +62,7 @@ func getElement(_ id: Int64) throws -> Element? {
 }
 
 func listElements() throws -> [Element] {
-    let result = try SQL.getDriver().query(Element.self) { $0.where(Record.id == id) }
+    let result = try Sworm.db.query(Element.self) { $0.where(Record.id == id) }
     var elems: [Element] = []
     for r in results {
         elems.append(try Element.parse(r))
@@ -72,21 +72,21 @@ func listElements() throws -> [Element] {
 
 // insert
 func createElement(_ elem: Element) throws -> Int64 {
-    return try SQL.getDriver().insert(elem)
+    return try Sworm.db.insert(elem)
 }
 
 // update
 func updateElement(_ elem: Element) throws -> Int {
-    return try SQL.getDriver().update(elem, where: Element.id == r.id)
+    return try Sworm.db.update(elem, where: Element.id == r.id)
 }
 
 // upsert
 func upsertElement(_ elem: Element) throws -> Int64 {
-    return try SQL.getDriver().upsert(elem, Element.id, where: Element.id == r.id)
+    return try Sworm.db.upsert(elem, Element.id, where: Element.id == r.id)
 }
 
 // delete
 func deleteElement(_ id: Int64) throws -> Int {
-    return try SQL.getDriver().run(Element.table.filter(Element.id == id).delete())
+    return try Sworm.db.delete(Element.self) { $0.where(Element.id == id)
 }
 ```

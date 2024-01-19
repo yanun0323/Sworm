@@ -6,22 +6,14 @@ import SQLite
 final class SwormTests: XCTestCase {
     var elem = Element(id: 0, name: "Yanun", value: 25)
     
-    func testInsert() throws {
-        let db = SQL.setup(isMock: true)
-        db.migrate([
-            Element.self
-        ])
-        
-        var insertedID: Int64 = 0
-        XCTAssertNoThrow(insertedID = try db.insert(elem))
-        XCTAssertEqual(1, insertedID)
+    func setupDB() -> DB {
+        let db = Sworm.setup(isMock: true)
+        db.migrate(Element.self)
+        return db
     }
     
-    func testQuery() throws {
-        let db = SQL.setup(isMock: true)
-        db.migrate([
-            Element.self
-        ])
+    func testCRUD() throws {
+        let db = setupDB()
     
         var insertedID: Int64 = 0
         XCTAssertNoThrow(insertedID = try db.insert(elem))
@@ -35,16 +27,55 @@ final class SwormTests: XCTestCase {
         }
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
+        
+        var updatedCount: Int = 0
+        let changed = Element(id: insertedID, name: "Not Yanun", value: 30)
+        XCTAssertNoThrow(updatedCount = try db.update(changed, where: Element.id == changed.id))
+        XCTAssertEqual(1, updatedCount)
+        
+        
+        var deleteCount: Int = 0
+        XCTAssertNoThrow(deleteCount = try db.delete(Element.self) { $0.where(Element.id == found.id) })
+        XCTAssertNotEqual(0, deleteCount)
+    }
+    
+    func testDaoCRUD() throws {
+        _ = setupDB()
+        
+        let dao = TestDao()
+        
+        var insertedID: Int64 = 0
+        XCTAssertNoThrow(insertedID = try dao.insert(elem))
+        XCTAssertEqual(1, insertedID)
+        
+        var rows = AnySequence<Row>([])
+        XCTAssertNoThrow(rows = try dao.query(Element.self, { $0.where(Element.value == 25)}))
+        var found = Element(id: 0, name: "", value: 0)
+        for row in rows {
+            XCTAssertNoThrow(found = try Element.parse(row))
+        }
+        XCTAssertEqual(elem.name, found.name)
+        XCTAssertEqual(elem.value, found.value)
+        
+        var updatedCount: Int = 0
+        let changed = Element(id: insertedID, name: "Not Yanun", value: 30)
+        XCTAssertNoThrow(updatedCount = try dao.update(changed, where: Element.id == changed.id))
+        XCTAssertEqual(1, updatedCount)
+        
+        
+        var deleteCount: Int = 0
+        XCTAssertNoThrow(deleteCount = try dao.delete(Element.self) { $0.where(Element.id == found.id) })
+        XCTAssertNotEqual(0, deleteCount)
     }
     
     func testHelperDecimal() throws {
         let testCases = [Decimal]([123, 223.445, -8534, -854.6024, -0.0054, 0.0054])
-        testCases.forEach { t in
-            testHelperDecimalCase(t)
+        try testCases.forEach { t in
+            try testHelperDecimalCase(t)
         }
     }
     
-    func testHelperDecimalCase(_ d: Decimal) {
+    func testHelperDecimalCase(_ d: Decimal) throws {
         let data = d.datatypeValue
         let decimal = Decimal.fromDatatypeValue(data)
         XCTAssertEqual(decimal, d)
@@ -52,12 +83,12 @@ final class SwormTests: XCTestCase {
     
     func testHelperColor() throws {
         let testCases = [Color]([.black, .blue, .brown, .red, .init(red: 0.95, green: 0.13, blue: 0.55)])
-        testCases.forEach { c in
-            testHelperColorCase(c)
+        try testCases.forEach { c in
+            try testHelperColorCase(c)
         }
     }
     
-    func testHelperColorCase(_ c: Color) {
+    func testHelperColorCase(_ c: Color) throws {
         let data = c.datatypeValue
         let color = Color.fromDatatypeValue(data)
         XCTAssertEqual(c.components!.red.floor(), color.components!.red.floor())
@@ -92,7 +123,7 @@ extension Element: Migrator {
     static var name = Expression<String>("name")
     static var value = Expression<Int>("value")
     
-    static func migrate(_ conn: Connection) throws {
+    static func migrate(_ conn: DB) throws {
         try conn.run(table.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)
             t.column(name, unique: true)
@@ -117,3 +148,6 @@ extension Element: Migrator {
         ]
     }
 }
+
+struct TestDao: BasicDao {}
+extension TestDao: BasicRepository {}
