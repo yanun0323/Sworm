@@ -32,7 +32,7 @@ public typealias Tablex = SQLite.Table
         )
     }
  
-    static func setter() -> [Setter] {
+    func setter() -> [Setter] {
         return [
             Element.name <- name,
             Element.value <- value
