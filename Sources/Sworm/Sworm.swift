@@ -24,20 +24,20 @@ extension Sworm {
         if let conn = _db {
             return conn
         }
-        return self.setup(isMock: true)
+        return self.setup(mock: true)
     }
     
     /** create a new sqlite database instance, use in memory sqlite database if isMock is true */
-    public static func setup(dbName name: String? = nil, isMock: Bool) -> DB {
-        var dbName = "production"
+    public static func setup(_ name: String? = nil, mock inMemory: Bool) -> DB {
+        var database = "production"
         if let name = name, !name.isEmpty {
-            dbName = name
+            database = name
         }
         let conn: DB
-        if isMock && (name == nil || name!.isEmpty) {
+        if inMemory && (name == nil || name!.isEmpty) {
             conn = try! DB(.inMemory)
         } else {
-            conn = try! DB(filePath(dbName))
+            conn = try! DB(filePath(database))
         }
         conn.busyTimeout = 5
         

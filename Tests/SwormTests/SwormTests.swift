@@ -7,7 +7,7 @@ final class SwormTests: XCTestCase {
     var elem = Element(id: 0, name: "Yanun", value: 25)
     
     func setupDB() -> DB {
-        let db = Sworm.setup(isMock: true)
+        let db = Sworm.setup(mock: true)
         db.migrate(Element.self)
         return db
     }
