@@ -27,7 +27,7 @@ public protocol BasicRepository {
     ///     must throw to roll the transaction back.
     ///
     /// - Throws: `Result.Error`, and rethrows.
-    func tx(action: @escaping () throws -> Void, success: @escaping () -> Void, fail: @escaping (Error) -> Void)
+    func tx(action: @escaping () throws -> Void, success: @escaping () -> Void, failed: @escaping (Error) -> Void)
     
     /// runs a transaction with the given mode.
     ///
@@ -55,16 +55,18 @@ public protocol BasicRepository {
     ///     must throw to roll the transaction back.
     ///
     /// - Throws: `Result.Error`, and rethrows.
-    func tx(action: @escaping () throws -> Void, fail: @escaping (Error) -> Void)
+    func tx(action: @escaping () throws -> Void, failed: @escaping (Error) -> Void)
     
     // MARK: - Query
     /** query element properties */
     func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) -> (V?, Error?)
+    
     /** query element properties */
     func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) throws -> V
     
     /** query element */
     func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) -> ([M], Error?)
+    
     /** query element */
     func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) throws -> [M]
     
@@ -141,14 +143,14 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
-    public func tx(action: @escaping () throws -> Void, success: @escaping () -> Void, fail: @escaping (Error) -> Void) {
+    public func tx(action: @escaping () throws -> Void, success: @escaping () -> Void, failed: @escaping (Error) -> Void) {
         do {
             try Sworm.db.tx {
                 try action()
             }
             success()
         } catch {
-            fail(error)
+            failed(error)
         }
     }
     
@@ -164,13 +166,13 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
-    public func tx(action: @escaping () throws -> Void, fail: @escaping (Error) -> Void) {
+    public func tx(action: @escaping () throws -> Void, failed: @escaping (Error) -> Void) {
         do {
             try Sworm.db.tx {
                 try action()
             }
         } catch {
-            fail(error)
+            failed(error)
         }
     }
     
