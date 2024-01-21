@@ -52,14 +52,17 @@ final class SwormTests: XCTestCase {
     func testDaoCRUD() throws {
         _ = setupDB()
         
-        let dao = TestDao()
+        let dao: BasicRepository = TestDao()
         
         var insertedID: Int64 = 0
-        XCTAssertNoThrow(insertedID = try dao.insert(elem))
+        var error: Error? = nil
+        XCTAssertNoThrow((insertedID, error) = dao.insert(elem))
+        XCTAssertNil(error)
         XCTAssertEqual(1, insertedID)
         
         var results = [Element]()
-        XCTAssertNoThrow(results = try dao.query(Element.self) { $0.where(Element.value == 25) })
+        XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 25) })
+        XCTAssertNil(error)
         
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
@@ -68,23 +71,27 @@ final class SwormTests: XCTestCase {
         
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Update Yanun", value: 30)
-        XCTAssertNoThrow(updatedCount = try dao.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertNoThrow((updatedCount, error) = dao.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertNil(error)
         XCTAssertEqual(1, updatedCount)
         
-        var result: Element?
-        XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
-        XCTAssertNotNil(result)
+        XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 30) })
+        XCTAssertNil(error)
+        XCTAssertEqual(1, results.count)
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertNil(error)
         XCTAssertEqual(2, upsertID)
         
-        XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
-        XCTAssertNotNil(result)
+        XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 30) })
+        XCTAssertNil(error)
+        XCTAssertEqual(1, results.count)
         
         var deleteCount: Int = 0
-        XCTAssertNoThrow(deleteCount = try dao.delete(Element.self) { $0.where(Element.id == found.id) })
+        XCTAssertNoThrow((deleteCount, error) = dao.delete(Element.self) { $0.where(Element.id == found.id) })
+        XCTAssertNil(error)
         XCTAssertNotEqual(0, deleteCount)
     }
     

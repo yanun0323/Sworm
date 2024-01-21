@@ -29,7 +29,7 @@ extension DB {
     ///     must throw to roll the transaction back.
     ///
     /// - Throws: `Result.Error`, and rethrows.
-    public func tx(_ mode: TransactionMode = .deferred, action: () throws -> Void) throws {
+    public func tx(_ mode: TransactionMode = .deferred, action: @escaping () throws -> Void) throws {
         try self.transaction(mode, block: action)
     }
     
@@ -103,8 +103,8 @@ extension DB {
     
     // MARK: - Delete
     /** delete element */
-    public func delete(_ model: Model.Type, _ query: @escaping (Tablex) -> QueryType) throws -> Int {
-        return try self.run(query(model.table).delete())
+    public func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+        return try self.run(filter(model.table).delete())
     }
 }
 
