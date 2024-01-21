@@ -57,45 +57,74 @@ public protocol BasicRepository {
     /// - Throws: `Result.Error`, and rethrows.
     func tx(action: @escaping () throws -> Void, fail: @escaping (Error) -> Void)
     
-    
-    
     // MARK: - Query
     /** query element properties */
     func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) -> (V?, Error?)
+    /** query element properties */
+    func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) throws -> V
     
     /** query element */
     func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) -> ([M], Error?)
+    /** query element */
+    func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) throws -> [M]
     
     // MARK: - Insert
     /** insert element. using defined setter when providing nil setter */
+    
     func insert(_ m: Model) -> (Int64, Error?)
+    /** insert element. using defined setter when providing nil setter */
+    func insert(_ m: Model) throws -> Int64
     
     /** insert element. using defined setter when providing nil setter */
     func insert(_ m: Model, _ insertValues: [Setter]) -> (Int64, Error?)
+    
+    /** insert element. using defined setter when providing nil setter */
+    func insert(_ m: Model, _ insertValues: [Setter]) throws -> Int64
     
     // MARK: - Upsert
     /** upsert element. using defined setter when providing nil setter */
     func upsert(_ m: Model, onConflictOf primaryKey: Expressible) -> (Int64, Error?)
     
     /** upsert element. using defined setter when providing nil setter */
+    func upsert(_ m: Model, onConflictOf primaryKey: Expressible) throws -> Int64
+    
+    /** upsert element. using defined setter when providing nil setter */
     func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) -> (Int64, Error?)
+    
+    /** upsert element. using defined setter when providing nil setter */
+    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) throws -> Int64
     
     /** upsert element. using defined setter when providing nil setter */
     func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?)
     
     /** upsert element. using defined setter when providing nil setter */
+    func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64
+    
+    /** upsert element. using defined setter when providing nil setter */
     func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?)
+    
+    /** upsert element. using defined setter when providing nil setter */
+    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64
     
     // MARK: - Update
     /** update element. using defined setter when providing nil setter */
     func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?)
     
     /** update element. using defined setter when providing nil setter */
+    func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) throws -> Int
+    
+    /** update element. using defined setter when providing nil setter */
     func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?)
+    
+    /** update element. using defined setter when providing nil setter */
+    func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) throws -> Int
     
     // MARK: - Delete
     /** delete element */
     func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?)
+    
+    /** delete element */
+    func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int
 }
 
 public protocol BasicDao {}
@@ -153,12 +182,20 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) throws -> V {
+        return try Sworm.db.query(model, query: filter)
+    }
+    
     public func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) -> ([M], Error?) {
         do {
             return (try Sworm.db.query(model, query: filter), nil)
         } catch {
             return ([], error)
         }
+    }
+    
+    public func query<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) throws -> [M] {
+        return try Sworm.db.query(model, query: filter)
     }
     
     public func insert(_ m: Model) -> (Int64, Error?) {
@@ -169,12 +206,20 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func insert(_ m: Model) throws -> Int64 {
+        return try Sworm.db.insert(m)
+    }
+    
     public func insert(_ m: Model, _ insertValues: [Setter]) -> (Int64, Error?) {
         do {
             return (try Sworm.db.insert(m, insertValues), nil)
         } catch {
             return (0, error)
         }
+    }
+    
+    public func insert(_ m: Model, _ insertValues: [Setter]) throws -> Int64 {
+        return try Sworm.db.insert(m, insertValues)
     }
     
     public func upsert(_ m: Model, onConflictOf primaryKey: Expressible) -> (Int64, Error?) {
@@ -185,12 +230,20 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible) throws -> Int64 {
+        return try Sworm.db.upsert(m, onConflictOf: primaryKey)
+    }
+    
     public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) -> (Int64, Error?) {
         do {
             return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey), nil)
         } catch {
             return (0, error)
         }
+    }
+    
+    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) throws -> Int64 {
+        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey)
     }
     
     public func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?) {
@@ -201,12 +254,20 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64 {
+        return try Sworm.db.upsert(m, onConflictOf: primaryKey, set: setValues)
+    }
+    
     public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?) {
         do {
             return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues), nil)
         } catch {
             return (0, error)
         }
+    }
+    
+    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64 {
+        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues)
     }
     
     public func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?) {
@@ -217,6 +278,10 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+        return try Sworm.db.update(m, query: filter)
+    }
+    
     public func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?) {
         do {
             return (try Sworm.db.update(m, set: setValues, query: filter), nil)
@@ -225,12 +290,20 @@ extension BasicDao where Self: BasicRepository {
         }
     }
     
+    public func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+        return try Sworm.db.update(m, set: setValues, query: filter)
+    }
+    
     public func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?) {
         do {
             return (try Sworm.db.delete(model, query: filter), nil)
         } catch {
             return (0, error)
         }
+    }
+    
+    public func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+        return try Sworm.db.delete(model, query: filter)
     }
     
 }

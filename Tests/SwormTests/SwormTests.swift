@@ -51,7 +51,44 @@ final class SwormTests: XCTestCase {
     
     func testDaoCRUD() throws {
         _ = setupDB()
+        let dao: BasicRepository = TestDao()
         
+        var insertedID: Int64 = 0
+        XCTAssertNoThrow(insertedID = try dao.insert(elem))
+        XCTAssertEqual(1, insertedID)
+        
+        var results = [Element]()
+        XCTAssertNoThrow(results = try dao.query(Element.self) { $0.where(Element.value == 25) })
+        
+        XCTAssertEqual(1, results.count)
+        guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
+        XCTAssertEqual(elem.name, found.name)
+        XCTAssertEqual(elem.value, found.value)
+        
+        var updatedCount: Int = 0
+        let changed = Element(id: insertedID, name: "Update Yanun", value: 30)
+        XCTAssertNoThrow(updatedCount = try dao.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertEqual(1, updatedCount)
+        
+        var result: Element?
+        XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
+        XCTAssertNotNil(result)
+        
+        var upsertID: Int64 = 0
+        let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
+        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertEqual(2, upsertID)
+        
+        XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
+        XCTAssertNotNil(result)
+        
+        var deleteCount: Int = 0
+        XCTAssertNoThrow(deleteCount = try dao.delete(Element.self) { $0.where(Element.id == found.id) })
+        XCTAssertNotEqual(0, deleteCount)
+    }
+    
+    func testDaoCRUDWithErrorReturn() throws {
+        _ = setupDB()
         let dao: BasicRepository = TestDao()
         
         var insertedID: Int64 = 0
