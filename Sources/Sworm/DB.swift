@@ -13,6 +13,17 @@ extension DB {
         }
     }
     
+    /** run table dropping */
+    public func drop(_ Models: Model.Type...) {
+        do {
+            for m in Models {
+                try Sworm.db.run(m.table.drop(ifExists: true))
+            }
+        } catch {
+            print("drop tables, err: \(error)")
+        }
+    }
+    
     /// runs a transaction with the given mode.
     ///
     /// - Note: Transactions cannot be nested. To nest transactions, see

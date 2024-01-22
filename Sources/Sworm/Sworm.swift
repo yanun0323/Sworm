@@ -56,9 +56,7 @@ extension Sworm {
             atPath: path, withIntermediateDirectories: true, attributes: nil
         )
         
-        #if DEBUG
-        print(path)
-        #endif
+        debug(path)
         
         return "\(path)/\(filename).sqlite3"
     }
