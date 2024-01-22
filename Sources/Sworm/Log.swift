@@ -46,17 +46,17 @@ extension Sworm {
         return Sworm.level
     }
     
-    private static func log(level: Sworm.LogLevel = .release, _ message: String) {
+    static func log(level: Sworm.LogLevel = .release, _ message: String) {
         if level.rawValue >= Sworm.level.rawValue {
             print("[\(level.string)] \(message)")
         }
     }
     
-    private static func warn(_ message: String) {
+    static func warn(_ message: String) {
         log(level: .warning, message)
     }
     
-    private static func debug(_ message: String) {
+    static func debug(_ message: String) {
         log(level: .debug, message)
     }
 }
