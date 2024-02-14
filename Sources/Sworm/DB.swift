@@ -70,44 +70,50 @@ extension DB {
     }
     
     // MARK: - Insert
-    /** insert element. using defined setter when providing nil setter */
+    /** insert element. using defined setter when providing empty setter */
     public func insert(_ m: Model, _ insertValues: Setter...) throws -> Int64 {
         return try self.insert(m, insertValues)
     }
     
-    /** insert element. using defined setter when providing nil setter */
+    /** insert element. using defined setter when providing empty setter */
     public func insert(_ m: Model, _ insertValues: [Setter] = []) throws -> Int64 {
         return try self.run(T(m).table.insert(m.get(insertValues)))
     }
     
     // MARK: - Upsert
-    /** upsert element. using defined setter when providing nil setter */
-    public func upsert(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expressible, set setValues: Setter...) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values 
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: Setter...) throws -> Int64 {
+         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
     }
     
-    /** upsert element. using defined setter when providing nil setter */
-    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: Setter...) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: Setter...) throws -> Int64 {
+         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
     }
     
-    /** upsert element. using defined setter when providing nil setter */
-    public func upsert(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64 {
+         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
     }
     
-    /** upsert element. using defined setter when providing nil setter */
-    public func upsert(_ m: Model, _ insertValues: [Setter] = [], onConflictOf primaryKey: Expressible, set setValues: [Setter] = []) throws -> Int64 {
-        return try self.run(T(m).table.upsert(m.get(insertValues), onConflictOf: primaryKey, set: m.get(setValues)))
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter] = [], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter] = []) throws -> Int64 {
+        return try self.run(T(m).table.upsert(m.get(insertValues, primaryKey: (primaryKey <- value)), onConflictOf: primaryKey, set: m.get(setValues)))
     }
     
     // MARK: - Update
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     public func update(_ m: Model, set setValues: Setter..., query filter: @escaping (Tablex) -> QueryType) throws -> Int {
          return try self.update(m, set: setValues, query: filter)
     }
     
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     public func update(_ m: Model, set setValues: [Setter] = [], query filter: @escaping (Tablex) -> QueryType) throws -> Int {
         return try self.run(filter(T(m).table).update(m.get(setValues)))
     }

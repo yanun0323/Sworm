@@ -38,7 +38,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow(upsertID = try db.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertNoThrow(upsertID = try db.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
         XCTAssertEqual(2, upsertID)
         
         XCTAssertNoThrow(result = try db.query(Element.self) { $0.where(Element.value == 30) }.first)
@@ -76,7 +76,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
         XCTAssertEqual(2, upsertID)
         
         XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
@@ -118,7 +118,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert, onConflictOf: Element.id) )
+        XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
         XCTAssertNil(error)
         XCTAssertEqual(2, upsertID)
         
@@ -183,9 +183,12 @@ struct Element {
 
 extension Element: Model {
     static let tableName: String = "elements"
-    static var id = Expression<Int64>("id")
-    static var name = Expression<String>("name")
-    static var value = Expression<Int>("value")
+    static let id = Expression<Int64>("id")
+    static let name = Expression<String>("name")
+    static let value = Expression<Int>("value")
+    
+    static let primaryKey: Expression<Int64> = id
+    var primaryKey: Int64 { id }
     
     static func migrate(_ conn: DB) throws {
         try conn.run(table.create(ifNotExists: true) { t in

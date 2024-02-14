@@ -12,16 +12,16 @@ public typealias Tablex = SQLite.Table
     static let name = Expression<String>("name")
     static let value = Expression<Blob>("value")
     
-    static var table: Tablex { .init("elements") }
+    static let tableName: String = "elements"
     
-    static func migrate(_ conn: Connection) throws {
-        try conn.run(table.create(ifNotExists: true) { t in
+    static func migrate(_ db: DB) throws {
+        try db.run(table.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)
             t.column(name, unique: true)
             t.column(value)
         })
         
-        try conn.run(table.createIndex(name, ifNotExists: true))
+        try db.run(table.createIndex(name, ifNotExists: true))
     }
     
     static func parse(_ r: Row) throws -> Element {
@@ -43,19 +43,20 @@ public typealias Tablex = SQLite.Table
  ```
  */
 public protocol Model {
+    
     static var tableName: String { get }
     
     /**
      migrate sqlite datebase schema
      ```
      // Sample
-     static func migrate(_ conn: Connection) throws {
-        try conn.run(table.create(ifNotExists: true) { t in
+     static func migrate(_ db: DB) throws {
+        try db.run(table.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)
             t.column(name, unique: true)
             t.column(value)
         })
-        try conn.run(table.createIndex(name, ifNotExists: true))
+        try db.run(table.createIndex(name, ifNotExists: true))
      }
      ```
      */
@@ -95,8 +96,14 @@ public protocol Model {
 extension Model {
     public static var table: Tablex { .init(tableName) }
     
-    func get(_ setter: [Setter]) -> [Setter] {
-        if setter.isEmpty { return self.setter() }
-        return setter
+    func get(_ setter: [Setter], primaryKey: Setter? = nil) -> [Setter] {
+        if !setter.isEmpty { return setter }
+        guard let primaryKey = primaryKey else {
+            return self.setter()
+        }
+        
+        var result = self.setter()
+        result.append(primaryKey)
+        return result
     }
 }

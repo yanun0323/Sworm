@@ -84,41 +84,49 @@ public protocol BasicRepository {
     func insert(_ m: Model, _ insertValues: [Setter]) throws -> Int64
     
     // MARK: - Upsert
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, onConflictOf primaryKey: Expressible) -> (Int64, Error?)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) -> (Int64, Error?)
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, onConflictOf primaryKey: Expressible) throws -> Int64
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) throws -> Int64
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) -> (Int64, Error?)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) -> (Int64, Error?)
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) throws -> Int64
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) throws -> Int64
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) -> (Int64, Error?)
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?)
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) -> (Int64, Error?)
     
-    /** upsert element. using defined setter when providing nil setter */
-    func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64
+    /// upsert element. using defined setter when providing empty setter
+    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
+    func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64
     
     // MARK: - Update
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?)
     
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) throws -> Int
     
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?)
     
-    /** update element. using defined setter when providing nil setter */
+    /** update element. using defined setter when providing empty setter */
     func update(_ m: Model, set setValues: [Setter], query filter: @escaping (Tablex) -> QueryType) throws -> Int
     
     // MARK: - Delete
@@ -224,52 +232,52 @@ extension BasicDao where Self: BasicRepository {
         return try Sworm.db.insert(m, insertValues)
     }
     
-    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible) -> (Int64, Error?) {
+    public func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) -> (Int64, Error?) {
         do {
-            return (try Sworm.db.upsert(m, onConflictOf: primaryKey), nil)
+            return (try Sworm.db.upsert(m, onConflictOf: primaryKey, primaryKey: value), nil)
         } catch {
             return (0, error)
         }
     }
     
-    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible) throws -> Int64 {
-        return try Sworm.db.upsert(m, onConflictOf: primaryKey)
+    public func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) throws -> Int64 {
+        return try Sworm.db.upsert(m, onConflictOf: primaryKey, primaryKey: value)
     }
     
-    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) -> (Int64, Error?) {
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) -> (Int64, Error?) {
         do {
-            return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey), nil)
+            return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value), nil)
         } catch {
             return (0, error)
         }
     }
     
-    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible) throws -> Int64 {
-        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey)
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element) throws -> Int64 {
+        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value)
     }
     
-    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?) {
+    public func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) -> (Int64, Error?) {
         do {
-            return (try Sworm.db.upsert(m, onConflictOf: primaryKey, set: setValues), nil)
+            return (try Sworm.db.upsert(m, onConflictOf: primaryKey, primaryKey: value, set: setValues), nil)
         } catch {
             return (0, error)
         }
     }
     
-    public func upsert(_ m: Model, onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64 {
-        return try Sworm.db.upsert(m, onConflictOf: primaryKey, set: setValues)
+    public func upsert<Element: Value>(_ m: Model, onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64 {
+        return try Sworm.db.upsert(m, onConflictOf: primaryKey, primaryKey: value, set: setValues)
     }
     
-    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) -> (Int64, Error?) {
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) -> (Int64, Error?) {
         do {
-            return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues), nil)
+            return (try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues), nil)
         } catch {
             return (0, error)
         }
     }
     
-    public func upsert(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expressible, set setValues: [Setter]) throws -> Int64 {
-        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, set: setValues)
+    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64 {
+        return try Sworm.db.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
     }
     
     public func update(_ m: Model, query filter: @escaping (Tablex) -> QueryType) -> (Int, Error?) {

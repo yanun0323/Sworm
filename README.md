@@ -14,14 +14,14 @@ extension Element: Model {
     
     static var table: Tablex { .init("elements") }
     
-    static func migrate(_ conn: Connection) throws {
-        try conn.run(table.create(ifNotExists: true) { t in
+    static func migrate(_ db: DB) throws {
+        try db.run(table.create(ifNotExists: true) { t in
             t.column(id, primaryKey: .autoincrement)
             t.column(name, unique: true)
             t.column(value)
         })
         
-        try conn.run(table.createIndex(name, ifNotExists: true))
+        try db.run(table.createIndex(name, ifNotExists: true))
     }
     
     static func parse(_ r: Row) throws -> Element {
