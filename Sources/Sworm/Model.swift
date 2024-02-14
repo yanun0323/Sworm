@@ -97,13 +97,22 @@ extension Model {
     public static var table: Tablex { .init(tableName) }
     
     func get(_ setter: [Setter], primaryKey: Setter? = nil) -> [Setter] {
-        if !setter.isEmpty { return setter }
-        guard let primaryKey = primaryKey else {
-            return self.setter()
+        if setter.isEmpty {
+            return self.setter().optionalAppended(primaryKey)
+        }
+        return setter.optionalAppended(primaryKey)
+    }
+}
+
+
+fileprivate extension RangeReplaceableCollection {
+    func optionalAppended(_ newElement: Element?) -> Self {
+        guard let newElement = newElement else {
+            return self
         }
         
-        var result = self.setter()
-        result.append(primaryKey)
-        return result
+        var slice = self
+        slice.append(newElement)
+        return slice
     }
 }
