@@ -27,7 +27,7 @@ let package = Package(
         .target(
             name: "Sworm",
             dependencies: [
-                .product(name: "SQLite", package: "SQLite.swift")
+                .product(name: "SQLite", package: "sqlite.swift")
             ]
         ),
         .testTarget(
