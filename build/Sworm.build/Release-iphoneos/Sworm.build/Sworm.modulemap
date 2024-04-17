@@ -1,4 +1,0 @@
-module Sworm {
-header "Sworm-Swift.h"
-export *
-}
