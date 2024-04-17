@@ -137,7 +137,9 @@ public protocol BasicRepository {
     func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int
 }
 
-public struct BasicDao {}
+public struct BasicDao {
+    public init() {}
+}
 
 extension BasicDao: BasicRepository {
     public func tx(action: @escaping () throws -> Void) -> Error? {
