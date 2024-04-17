@@ -1,4 +1,4 @@
-// swift-tools-version: 5.9
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,9 +6,10 @@ import PackageDescription
 let package = Package(
     name: "Sworm",
     platforms: [
-        .iOS(.v16),
-        .macOS(.v13),
-        .watchOS(.v9)
+        .iOS(.v11),
+        .macOS(.v10_13),
+        .watchOS(.v4),
+        .tvOS(.v11)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -27,18 +28,15 @@ let package = Package(
         .target(
             name: "Sworm",
             dependencies: [
-                .product(name: "SQLite", package: "sqlite.swift")
+                .product(name: "SQLite", package: "SQLite.swift")
             ]
         ),
-//        .executableTarget(
-//            name: "Sworm",
-//            dependencies: [
-//                .product(name: "SQLite", package: "SQLite.swift")
-//            ]
-//        ),
         .testTarget(
             name: "SwormTests",
-            dependencies: ["Sworm"]
+            dependencies: [
+                "Sworm",
+                .product(name: "SQLite", package: "SQLite.swift")
+            ]
         ),
     ]
 )

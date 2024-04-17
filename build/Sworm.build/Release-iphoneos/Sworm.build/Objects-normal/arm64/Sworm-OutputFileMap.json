@@ -1,0 +1,45 @@
+{
+  "" : {
+    "const-values" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master.swiftconstvalues",
+    "dependencies" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master.d",
+    "diagnostics" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master.dia",
+    "emit-module-dependencies" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master-emit-module.dia",
+    "swift-dependencies" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm-master.swiftdeps"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/BasicRepository.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/BasicRepository.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/BasicRepository.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/BasicRepository.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/Color.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Color.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Color.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Color.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/DB.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/DB.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/DB.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/DB.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/Helper.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Helper.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Helper.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Helper.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/Log.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Log.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Log.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Log.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/Model.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Model.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Model.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Model.o"
+  },
+  "/Users/yanunyang/Documents/Project/Sworm/Sources/Sworm/Sworm.swift" : {
+    "index-unit-output-path" : "/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm.o",
+    "llvm-bc" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm.bc",
+    "object" : "/Users/yanunyang/Documents/Project/Sworm/build/Sworm.build/Release-iphoneos/Sworm.build/Objects-normal/arm64/Sworm.o"
+  }
+}
