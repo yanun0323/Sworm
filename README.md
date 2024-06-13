@@ -31,15 +31,15 @@ extension Element: Model {
             value: try r.get(value)
         )
     }
-}
 
-// setter is for quick insert/update/upsert
-// ** please DO NOT set primary key in setter **
-func setter() -> [Setter] {
-    return [
-        Element.name <- name,
-        Element.age <- age
-    ]
+    // setter is for quick insert/update/upsert
+    // ** please DO NOT set primary key in setter **
+    func setter() -> [Setter] {
+        return [
+            Element.name <- name,
+            Element.age <- age
+        ]
+    }
 }
 ```
 
