@@ -3,7 +3,7 @@ import SQLite
 // MARK: DB
 extension DB {
     /** run table migrations */
-    public func migrate(_ Models: Model.Type...) {
+    public func migrate<M: Model>(_ Models: M.Type...) {
         do {
             for m in Models {
                 try m.migrate(self)
@@ -14,7 +14,7 @@ extension DB {
     }
     
     /** run table dropping */
-    public func drop(_ Models: Model.Type...) {
+    public func drop<M: Model>(_ Models: M.Type...) {
         do {
             for m in Models {
                 try Sworm.db.run(m.table.drop(ifExists: true))
@@ -55,7 +55,7 @@ extension DB {
     
     // MARK: - Query
     /** query element properties */
-    public func query<V: Value>(_ model: Model.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) throws -> V {
+    public func query<V: Value, M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> ScalarQuery<V>) throws -> V {
         return try self.scalar(filter(model.table))
     }
     
@@ -71,65 +71,66 @@ extension DB {
     
     // MARK: - Insert
     /** insert element. using defined setter when providing empty setter */
-    public func insert(_ m: Model, _ insertValues: Setter...) throws -> Int64 {
+    public func insert<M: Model>(_ m: M, _ insertValues: Setter...) throws -> Int64 {
         return try self.insert(m, insertValues)
     }
     
     /** insert element. using defined setter when providing empty setter */
-    public func insert(_ m: Model, _ insertValues: [Setter] = []) throws -> Int64 {
-        return try self.run(T(m).table.insert(m.get(insertValues)))
+    public func insert<M: Model>(_ m: M, _ insertValues: [Setter] = []) throws -> Int64 {
+        return try self.run(T(m).table.insert(m.get(insertValues, primaryKey: true)))
     }
     
     // MARK: - Upsert
     /// upsert element. using defined setter when providing empty setter
     /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
-    /// upsert element. using defined setter when providing empty setter
-    /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values 
-    public func upsert<Element: Value>(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: Setter...) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
+    public func upsert<M: Model>(_ m: M, _ insertValues: Setter..., set setValues: Setter...) throws -> Int64 {
+         return try self.upsert(m, insertValues, set: setValues)
     }
     
     /// upsert element. using defined setter when providing empty setter
     /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
-    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: Setter...) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
+    public func upsert<M: Model>(_ m: M, _ insertValues: [Setter], set setValues: Setter...) throws -> Int64 {
+         return try self.upsert(m, insertValues, set: setValues)
     }
     
     /// upsert element. using defined setter when providing empty setter
     /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
-    public func upsert<Element: Value>(_ m: Model, _ insertValues: Setter..., onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter]) throws -> Int64 {
-         return try self.upsert(m, insertValues, onConflictOf: primaryKey, primaryKey: value, set: setValues)
+    public func upsert<M: Model>(_ m: M, _ insertValues: Setter..., set setValues: [Setter]) throws -> Int64 {
+         return try self.upsert(m, insertValues, set: setValues)
     }
     
     /// upsert element. using defined setter when providing empty setter
     /// - NOTE: It would using defined setter which auto appended primary key when not providing insert values
-    public func upsert<Element: Value>(_ m: Model, _ insertValues: [Setter] = [], onConflictOf primaryKey: Expression<Element>, primaryKey value: Element, set setValues: [Setter] = []) throws -> Int64 {
-        return try self.run(T(m).table.upsert(m.get(insertValues, primaryKey: (primaryKey <- value)), onConflictOf: primaryKey, set: m.get(setValues)))
+    public func upsert<M: Model>(_ m: M, _ insertValues: [Setter] = [], set setValues: [Setter] = []) throws -> Int64 {
+        return try self.run(T(m).table.upsert(m.get(insertValues, primaryKey: true), onConflictOf: T(m).id, set: m.get(setValues)))
     }
     
     // MARK: - Update
     /** update element. using defined setter when providing empty setter */
-    public func update(_ m: Model, set setValues: Setter..., query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+    public func update<M: Model>(_ m: M, set setValues: Setter..., query filter: @escaping (Tablex) -> QueryType) throws -> Int {
          return try self.update(m, set: setValues, query: filter)
     }
     
     /** update element. using defined setter when providing empty setter */
-    public func update(_ m: Model, set setValues: [Setter] = [], query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+    public func update<M: Model>(_ m: M, set setValues: [Setter] = [], query filter: @escaping (Tablex) -> QueryType) throws -> Int {
         return try self.run(filter(T(m).table).update(m.get(setValues)))
     }
     
     // MARK: - Delete
     /** delete element */
-    public func delete(_ model: Model.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int {
+    public func delete<M: Model>(_ model: M.Type, query filter: @escaping (Tablex) -> QueryType) throws -> Int {
         return try self.run(filter(model.table).delete())
     }
 }
 
 fileprivate extension DB {
-    func T(_ m: Model) -> Model.Type {
+    func T<M: Model>(_ m: M) -> M.Type {
         return type(of: m)
     }
 }
 
-
-
+extension Setter: @retroactive Equatable {
+    public static func == (lhs: Setter, rhs: Setter) -> Bool {
+        return lhs.expression.template.description == rhs.expression.template.description
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/master.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.derived/runner.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/runner.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/runner.swiftdeps"
+  }
+}

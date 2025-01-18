@@ -1,6 +1,15 @@
+import Foundation
 import SQLite
 
+public typealias UUID = Foundation.UUID
 public typealias Tablex = SQLite.Table
+public typealias Expression = SQLite.Expression
+
+public protocol PrimaryKeyTypeProtocol {}
+extension Int: PrimaryKeyTypeProtocol {}
+extension Int32: PrimaryKeyTypeProtocol {}
+extension Int64: PrimaryKeyTypeProtocol {}
+extension UUID: PrimaryKeyTypeProtocol {}
 
 // MARK: Model
 /**
@@ -43,7 +52,10 @@ public typealias Tablex = SQLite.Table
  ```
  */
 public protocol Model {
+    associatedtype PrimaryKey: PrimaryKeyTypeProtocol
     
+    static var id: Expression<PrimaryKey> { get }
+
     static var tableName: String { get }
     
     /**
@@ -78,11 +90,24 @@ public protocol Model {
     static func parse(_:Row) throws -> Self
     
     /**
-     setter for insert, update, upsert function
+     primaryKeySetter for insert, update, upsert function.
+     - Note: return nil if primary key is auto incremented.
+     ```
+     // Sample
+     static func primaryKeySetter() -> Setter? {
+        return Element.id <- id
+     }
+     ```
+     */
+
+    func primaryKeySetter() -> Setter?
+    
+    /**
+     valuesSetter for insert, update, upsert function
      - Note: DO NOT set primary key in setter.
      ```
      // Sample
-     static func setter() -> [Setter] {
+     static func valuesSetter() -> [Setter] {
         return [
             Element.name <- name,
             Element.value<- value
@@ -90,29 +115,45 @@ public protocol Model {
      }
      ```
      */
-    func setter() -> [Setter]
+    func valuesSetter() -> [Setter]
 }
 
 extension Model {
     public static var table: Tablex { .init(tableName) }
     
-    func get(_ setter: [Setter], primaryKey: Setter? = nil) -> [Setter] {
-        if setter.isEmpty {
-            return self.setter().optionalAppended(primaryKey)
+    func get(_ setter: [Setter], primaryKey: Bool = false) -> [Setter] {
+        var pk: Setter? = nil
+        if primaryKey {
+            pk = primaryKeySetter()
         }
-        return setter.optionalAppended(primaryKey)
+
+        if setter.isEmpty {
+            return self.valuesSetter().optionalAppended(pk)
+        }
+
+        for s in setter {
+            if s == pk {
+                return setter
+            }
+        }
+        
+        return setter.optionalAppended(pk)
     }
 }
 
 
 fileprivate extension RangeReplaceableCollection {
+    func appended(_ newElement: Element) -> Self {
+        var slice = self
+        slice.append(newElement)
+        return slice
+    }
+
     func optionalAppended(_ newElement: Element?) -> Self {
         guard let newElement = newElement else {
             return self
         }
-        
-        var slice = self
-        slice.append(newElement)
-        return slice
+
+        return self.appended(newElement)
     }
 }

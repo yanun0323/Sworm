@@ -1,0 +1,47 @@
+{
+  "": {
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/master.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/BasicRepository.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/BasicRepository.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/BasicRepository.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/BasicRepository~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/BasicRepository.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Color.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Color.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Color.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Color~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Color.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/DB.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/DB.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/DB.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/DB~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/DB.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Helper.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Helper.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Helper.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Helper~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Helper.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Log.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Log.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Log.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Log~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Log.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Model.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Model.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Model.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Model~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Model.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Sworm.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm.swiftdeps"
+  }
+}

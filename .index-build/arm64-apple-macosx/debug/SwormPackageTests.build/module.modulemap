@@ -1,0 +1,4 @@
+module SwormPackageTests {
+    header "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/SwormPackageTests-Swift.h"
+    requires objc
+}
