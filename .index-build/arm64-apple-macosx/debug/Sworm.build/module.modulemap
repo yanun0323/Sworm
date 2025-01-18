@@ -1,4 +1,0 @@
-module Sworm {
-    header "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm-Swift.h"
-    requires objc
-}

@@ -1,4 +1,0 @@
-module SQLite {
-    header "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLite-Swift.h"
-    requires objc
-}

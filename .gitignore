@@ -7,3 +7,18 @@ DerivedData/
 .swiftpm/config/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
+
+# Mac system files
+*.DS_Store
+*.DS_STORE
+
+# VSCode settings
+*.vscode
+
+# Golang
+go.work
+
+# Others
+*.yaml
+*.build
+
