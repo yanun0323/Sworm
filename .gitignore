@@ -21,4 +21,6 @@ go.work
 # Others
 *.yaml
 *.build
-
+*.index-build
+*.swiftpm
+*build
