@@ -1,0 +1,1211 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.xctest/Contents/MacOS/SwormPackageTests",
+      "packagePath" : "/Users/Shared/Project/personal/swift/Sworm",
+      "productName" : "SwormPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.SQLite-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/sources",
+      "importPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Backup.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Blob.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Aggregation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Attach.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Pragmas.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Errors.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Result.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteFeature.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteVersion.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Statement.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/URIQueryParameter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Value.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/Cipher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS4.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS5.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/RTree.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Foundation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Helpers.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/Connection+Schema.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaChanger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaDefinitions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Coding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Collation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CoreFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CustomFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/DateAndTimeFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Expression.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Operators.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query+with.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Schema.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Setter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SQLite",
+      "moduleOutputPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SQLite.swiftmodule",
+      "objects" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Backup.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Blob.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Aggregation.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Attach.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Pragmas.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Errors.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Result.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteFeature.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteVersion.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Statement.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/URIQueryParameter.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Value.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Cipher.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS4.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS5.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/RTree.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Foundation.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Helpers.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Schema.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaChanger.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaDefinitions.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaReader.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/AggregateFunctions.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Coding.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Collation.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CoreFunctions.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CustomFunctions.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/DateAndTimeFunctions.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Expression.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Operators.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query+with.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Schema.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Setter.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx10.13",
+        "-enable-batch-mode",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLite-Swift.h",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-target",
+        "arm64-apple-ios13.0-simulator",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-Xcc",
+        "-DSWIFT_PACKAGE=0",
+        "-suppress-warnings"
+      ],
+      "outputFileMapPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SQLite.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Backup.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Blob.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Aggregation.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Attach.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Pragmas.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Errors.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Result.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteFeature.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteVersion.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Statement.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/URIQueryParameter.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Value.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/Cipher.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS4.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS5.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/RTree.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Foundation.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Helpers.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/Connection+Schema.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaChanger.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaDefinitions.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaReader.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Coding.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Collation.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CoreFunctions.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CustomFunctions.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/DateAndTimeFunctions.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Expression.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Operators.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query+with.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Schema.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Setter.swift"
+      ],
+      "tempsPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.Sworm-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/sources",
+      "importPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/BasicRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Color.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/DB.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Helper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Log.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Model.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Sworm.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SQLite.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Sworm",
+      "moduleOutputPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/Sworm.swiftmodule",
+      "objects" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/BasicRepository.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Color.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/DB.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Helper.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Log.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Model.swift.o",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm-Swift.h",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-target",
+        "arm64-apple-ios13.0-simulator",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-Xcc",
+        "-DSWIFT_PACKAGE=0",
+        "-package-name",
+        "sworm"
+      ],
+      "outputFileMapPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/Sworm.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/BasicRepository.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Color.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/DB.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Helper.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Log.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Model.swift",
+        "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Sworm.swift"
+      ],
+      "tempsPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwormPackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/sources",
+      "importPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SwormTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwormPackageTests",
+      "moduleOutputPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SwormPackageTests.swiftmodule",
+      "objects" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/SwormPackageTests-Swift.h",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-target",
+        "arm64-apple-ios13.0-simulator",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-Xcc",
+        "-DSWIFT_PACKAGE=0",
+        "-package-name",
+        "sworm"
+      ],
+      "outputFileMapPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SwormPackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SwormTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/sources",
+      "importPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Tests/SwormTests/SwormTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/Sworm.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SwormTests",
+      "moduleOutputPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SwormTests.swiftmodule",
+      "objects" : [
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/SwormTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx13.0",
+        "-enable-batch-mode",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-module-cache-path",
+        "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-Xfrontend",
+        "-experimental-lazy-typecheck",
+        "-Xfrontend",
+        "-experimental-skip-all-function-bodies",
+        "-Xfrontend",
+        "-experimental-allow-module-with-compiler-errors",
+        "-Xfrontend",
+        "-empty-abi-descriptor",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+        "-target",
+        "arm64-apple-ios13.0-simulator",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-Xcc",
+        "-DSWIFT_PACKAGE=0",
+        "-package-name",
+        "sworm"
+      ],
+      "outputFileMapPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules/SwormTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : true,
+      "sources" : [
+        "/Users/Shared/Project/personal/swift/Sworm/Tests/SwormTests/SwormTests.swift"
+      ],
+      "tempsPath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "SQLite" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SQLite",
+      "-incremental",
+      "-c",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Backup.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Blob.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Aggregation.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Attach.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Pragmas.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Errors.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Result.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteFeature.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteVersion.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Statement.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/URIQueryParameter.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Value.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/Cipher.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS4.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS5.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/RTree.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Foundation.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Helpers.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/Connection+Schema.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaChanger.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaDefinitions.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaReader.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Coding.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Collation.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CoreFunctions.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CustomFunctions.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/DateAndTimeFunctions.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Expression.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Operators.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query+with.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Schema.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Setter.swift",
+      "-I",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx10.13",
+      "-enable-batch-mode",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLite-Swift.h",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+      "-target",
+      "arm64-apple-ios13.0-simulator",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-Xcc",
+      "-DSWIFT_PACKAGE=0",
+      "-suppress-warnings",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "Sworm" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Sworm",
+      "-package-name",
+      "sworm",
+      "-incremental",
+      "-c",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/BasicRepository.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Color.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/DB.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Helper.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Log.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Model.swift",
+      "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Sworm.swift",
+      "-I",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/Sworm-Swift.h",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+      "-target",
+      "arm64-apple-ios13.0-simulator",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-Xcc",
+      "-DSWIFT_PACKAGE=0",
+      "-package-name",
+      "sworm",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwormPackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwormPackageTests",
+      "-package-name",
+      "sworm",
+      "-incremental",
+      "-c",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.derived/runner.swift",
+      "-I",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/SwormPackageTests-Swift.h",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+      "-target",
+      "arm64-apple-ios13.0-simulator",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-Xcc",
+      "-DSWIFT_PACKAGE=0",
+      "-package-name",
+      "sworm",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SwormTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SwormTests",
+      "-package-name",
+      "sworm",
+      "-incremental",
+      "-c",
+      "/Users/Shared/Project/personal/swift/Sworm/Tests/SwormTests/SwormTests.swift",
+      "-I",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx13.0",
+      "-enable-batch-mode",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-module-cache-path",
+      "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-Xfrontend",
+      "-experimental-lazy-typecheck",
+      "-Xfrontend",
+      "-experimental-skip-all-function-bodies",
+      "-Xfrontend",
+      "-experimental-allow-module-with-compiler-errors",
+      "-Xfrontend",
+      "-empty-abi-descriptor",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+      "-target",
+      "arm64-apple-ios13.0-simulator",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-Xcc",
+      "-DSWIFT_PACKAGE=0",
+      "-package-name",
+      "sworm",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "SQLite" : [
+
+    ],
+    "Sworm" : [
+      "SQLite"
+    ],
+    "SwormPackageTests" : [
+      "SwormTests",
+      "Sworm",
+      "SQLite"
+    ],
+    "SwormTests" : [
+      "Sworm",
+      "SQLite"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "writeCommands" : {
+    "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Backup.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Blob.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Aggregation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Attach.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Pragmas.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Errors.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Result.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteFeature.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteVersion.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Statement.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/URIQueryParameter.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Value.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/Cipher.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS4.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS5.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/RTree.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Foundation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Helpers.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/Connection+Schema.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaChanger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaDefinitions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaReader.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Coding.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Collation.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CoreFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CustomFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/DateAndTimeFunctions.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Expression.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Operators.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query+with.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Schema.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Setter.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/sources"
+    },
+    "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/BasicRepository.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Color.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/DB.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Helper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Log.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Model.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Sources/Sworm/Sworm.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/Sworm.build/sources"
+    },
+    "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormPackageTests.build/sources"
+    },
+    "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/Shared/Project/personal/swift/Sworm/Tests/SwormTests/SwormTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SwormTests.build/sources"
+    },
+    "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

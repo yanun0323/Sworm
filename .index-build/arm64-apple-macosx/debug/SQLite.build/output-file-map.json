@@ -1,0 +1,215 @@
+{
+  "": {
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/master.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Backup.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Backup.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Backup.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Backup~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Backup.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Blob.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Blob.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Blob.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Blob~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Blob.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Aggregation.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Aggregation.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Aggregation.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Aggregation~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Aggregation.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Attach.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Attach.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Attach.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Attach~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Attach.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection+Pragmas.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Pragmas.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Pragmas.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Pragmas~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Pragmas.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Connection.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Errors.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Errors.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Errors.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Errors~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Errors.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Result.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Result.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Result.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Result~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Result.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteFeature.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteFeature.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteFeature.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteFeature~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteFeature.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/SQLiteVersion.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteVersion.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteVersion.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteVersion~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SQLiteVersion.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Statement.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Statement.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Statement.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Statement~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Statement.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/URIQueryParameter.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/URIQueryParameter.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/URIQueryParameter.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/URIQueryParameter~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/URIQueryParameter.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Core/Value.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Value.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Value.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Value~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Value.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/Cipher.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Cipher.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Cipher.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Cipher~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Cipher.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS4.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS4.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS4.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS4~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS4.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/FTS5.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS5.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS5.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS5~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/FTS5.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Extensions/RTree.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/RTree.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/RTree.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/RTree~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/RTree.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Foundation.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Foundation.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Foundation.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Foundation~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Foundation.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Helpers.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Helpers.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Helpers.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Helpers~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Helpers.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/Connection+Schema.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Schema.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Schema.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Schema~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Connection+Schema.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaChanger.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaChanger.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaChanger.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaChanger~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaChanger.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaDefinitions.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaDefinitions.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaDefinitions.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaDefinitions~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaDefinitions.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Schema/SchemaReader.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaReader.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaReader.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaReader~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/SchemaReader.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/AggregateFunctions.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/AggregateFunctions.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/AggregateFunctions.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/AggregateFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/AggregateFunctions.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Coding.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Coding.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Coding.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Coding~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Coding.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Collation.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Collation.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Collation.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Collation~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Collation.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CoreFunctions.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CoreFunctions.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CoreFunctions.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CoreFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CoreFunctions.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/CustomFunctions.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CustomFunctions.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CustomFunctions.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CustomFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/CustomFunctions.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/DateAndTimeFunctions.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/DateAndTimeFunctions.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/DateAndTimeFunctions.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/DateAndTimeFunctions~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/DateAndTimeFunctions.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Expression.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Expression.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Expression.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Expression~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Expression.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Operators.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Operators.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Operators.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Operators~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Operators.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query+with.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query+with.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query+with.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query+with~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query+with.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Query.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Query.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Schema.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Schema.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Schema.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Schema~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Schema.swiftdeps"
+  },
+  "/Users/Shared/Project/personal/swift/Sworm/.index-build/checkouts/SQLite.swift/Sources/SQLite/Typed/Setter.swift": {
+    "dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Setter.d",
+    "object": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Setter.swift.o",
+    "swiftmodule": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Setter~partial.swiftmodule",
+    "swift-dependencies": "/Users/Shared/Project/personal/swift/Sworm/.index-build/arm64-apple-macosx/debug/SQLite.build/Setter.swiftdeps"
+  }
+}

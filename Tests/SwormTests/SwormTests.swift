@@ -3,6 +3,8 @@ import SwiftUI
 import SQLite
 @testable import Sworm
 
+typealias Expression = SQLite.Expression
+
 final class SwormTests: XCTestCase {
     var elem = Element(id: 0, name: "Yanun", value: 25)
     
@@ -10,6 +12,24 @@ final class SwormTests: XCTestCase {
         let db = Sworm.setup(mock: true)
         db.migrate(Element.self)
         return db
+    }
+    
+    func testExpressionEqual() throws {
+        let a = Expression<Int64>("id")
+        let b = Expression<Int64>("id")
+        XCTAssertTrue(a.description == b.description)
+        
+        let c = Expression<Int64>("id")
+        let d = Expression<UUID>("id")
+        XCTAssertTrue(c.description == d.description)
+        
+        let e = Expression<Int64>("id_1")
+        let f = Expression<Int64>("id_2")
+        XCTAssertFalse(e.description == f.description)
+        
+        let s1 = Expression<Int64>("id") <- 1
+        let s2 = Expression<Int64>("id") <- 2
+        XCTAssertTrue(s1 == s2, s1.expression.template.description)
     }
     
     func testCRUD() throws {
@@ -24,6 +44,7 @@ final class SwormTests: XCTestCase {
         
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
+        XCTAssertEqual(insertedID, found.id)
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
         
@@ -38,7 +59,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow(upsertID = try db.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
+        XCTAssertNoThrow(upsertID = try db.upsert(upsert))
         XCTAssertEqual(2, upsertID)
         
         XCTAssertNoThrow(result = try db.query(Element.self) { $0.where(Element.value == 30) }.first)
@@ -62,6 +83,7 @@ final class SwormTests: XCTestCase {
         
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
+        XCTAssertEqual(1, found.id)
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
         
@@ -76,7 +98,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow(upsertID = try dao.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
+        XCTAssertNoThrow(upsertID = try dao.upsert(upsert))
         XCTAssertEqual(2, upsertID)
         
         XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
@@ -118,7 +140,7 @@ final class SwormTests: XCTestCase {
         
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
-        XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert, onConflictOf: Element.id, primaryKey: upsert.id) )
+        XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert))
         XCTAssertNil(error)
         XCTAssertEqual(2, upsertID)
         
@@ -207,8 +229,12 @@ extension Element: Model {
             value: try r.get(value)
         )
     }
+
+    func primaryKeySetter() -> Setter? {
+        return nil
+    }
     
-    func setter() -> [Setter] {
+    func valuesSetter() -> [Setter] {
         return [
             Element.name <- name,
             Element.value <- value
