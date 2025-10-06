@@ -1,179 +1,181 @@
-import XCTest
-import SwiftUI
 import SQLite
+import SwiftUI
+import Testing
+import XCTest
+
 @testable import Sworm
 
 typealias Expression = SQLite.Expression
 
 final class SwormTests: XCTestCase {
     var elem = Element(id: 0, name: "Yanun", value: 25)
-    
+
     func setupDB() -> DB {
         let db = Sworm.setup(mock: true)
         db.migrate(Element.self)
         return db
     }
-    
+
     func testExpressionEqual() throws {
         let a = Expression<Int64>("id")
         let b = Expression<Int64>("id")
         XCTAssertTrue(a.description == b.description)
-        
+
         let c = Expression<Int64>("id")
         let d = Expression<UUID>("id")
         XCTAssertTrue(c.description == d.description)
-        
+
         let e = Expression<Int64>("id_1")
         let f = Expression<Int64>("id_2")
         XCTAssertFalse(e.description == f.description)
-        
+
         let s1 = Expression<Int64>("id") <- 1
         let s2 = Expression<Int64>("id") <- 2
         XCTAssertTrue(s1 == s2, s1.expression.template.description)
     }
-    
+
     func testCRUD() throws {
         let db = setupDB()
-    
+
         var insertedID: Int64 = 0
         XCTAssertNoThrow(insertedID = try db.insert(elem))
         XCTAssertEqual(1, insertedID)
-        
+
         var results = [Element]()
         XCTAssertNoThrow(results = try db.query(Element.self) { $0.where(Element.value == 25) })
-        
+
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
         XCTAssertEqual(insertedID, found.id)
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
-        
+
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Update Yanun", value: 30)
-        XCTAssertNoThrow(updatedCount = try db.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertNoThrow(updatedCount = try db.update(changed) { $0.where(Element.id == changed.id) })
         XCTAssertEqual(1, updatedCount)
-        
+
         var result: Element?
         XCTAssertNoThrow(result = try db.query(Element.self) { $0.where(Element.value == 30) }.first)
         XCTAssertNotNil(result)
-        
+
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
         XCTAssertNoThrow(upsertID = try db.upsert(upsert))
         XCTAssertEqual(2, upsertID)
-        
+
         XCTAssertNoThrow(result = try db.query(Element.self) { $0.where(Element.value == 30) }.first)
         XCTAssertNotNil(result)
-        
+
         var deleteCount: Int = 0
         XCTAssertNoThrow(deleteCount = try db.delete(Element.self) { $0.where(Element.id == found.id) })
         XCTAssertNotEqual(0, deleteCount)
     }
-    
+
     func testDaoCRUD() throws {
         _ = setupDB()
         let dao: BasicRepository = TestDao()
-        
+
         var insertedID: Int64 = 0
         XCTAssertNoThrow(insertedID = try dao.insert(elem))
         XCTAssertEqual(1, insertedID)
-        
+
         var results = [Element]()
         XCTAssertNoThrow(results = try dao.query(Element.self) { $0.where(Element.value == 25) })
-        
+
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
         XCTAssertEqual(1, found.id)
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
-        
+
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Update Yanun", value: 30)
-        XCTAssertNoThrow(updatedCount = try dao.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertNoThrow(updatedCount = try dao.update(changed) { $0.where(Element.id == changed.id) })
         XCTAssertEqual(1, updatedCount)
-        
+
         var result: Element?
         XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
         XCTAssertNotNil(result)
-        
+
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
         XCTAssertNoThrow(upsertID = try dao.upsert(upsert))
         XCTAssertEqual(2, upsertID)
-        
+
         XCTAssertNoThrow(result = try dao.query(Element.self) { $0.where(Element.value == 30) }.first)
         XCTAssertNotNil(result)
-        
+
         var deleteCount: Int = 0
         XCTAssertNoThrow(deleteCount = try dao.delete(Element.self) { $0.where(Element.id == found.id) })
         XCTAssertNotEqual(0, deleteCount)
     }
-    
+
     func testDaoCRUDWithErrorReturn() throws {
         _ = setupDB()
         let dao: BasicRepository = TestDao()
-        
+
         var insertedID: Int64 = 0
         var error: Error? = nil
         XCTAssertNoThrow((insertedID, error) = dao.insert(elem))
         XCTAssertNil(error)
         XCTAssertEqual(1, insertedID)
-        
+
         var results = [Element]()
         XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 25) })
         XCTAssertNil(error)
-        
+
         XCTAssertEqual(1, results.count)
         guard let found = results.first else { throw XCTestError(.failureWhileWaiting) }
         XCTAssertEqual(elem.name, found.name)
         XCTAssertEqual(elem.value, found.value)
-        
+
         var updatedCount: Int = 0
         let changed = Element(id: insertedID, name: "Update Yanun", value: 30)
-        XCTAssertNoThrow((updatedCount, error) = dao.update(changed) { $0.where(Element.id == changed.id )})
+        XCTAssertNoThrow((updatedCount, error) = dao.update(changed) { $0.where(Element.id == changed.id) })
         XCTAssertNil(error)
         XCTAssertEqual(1, updatedCount)
-        
+
         XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 30) })
         XCTAssertNil(error)
         XCTAssertEqual(1, results.count)
-        
+
         var upsertID: Int64 = 0
         let upsert = Element(id: 2, name: "Upsert Yanun", value: 50)
         XCTAssertNoThrow((upsertID, error) = dao.upsert(upsert))
         XCTAssertNil(error)
         XCTAssertEqual(2, upsertID)
-        
+
         XCTAssertNoThrow((results, error) = dao.query(Element.self) { $0.where(Element.value == 30) })
         XCTAssertNil(error)
         XCTAssertEqual(1, results.count)
-        
+
         var deleteCount: Int = 0
         XCTAssertNoThrow((deleteCount, error) = dao.delete(Element.self) { $0.where(Element.id == found.id) })
         XCTAssertNil(error)
         XCTAssertNotEqual(0, deleteCount)
     }
-    
+
     func testHelperDecimal() throws {
         let testCases = [Decimal]([123, 223.445, -8534, -854.6024, -0.0054, 0.0054])
         try testCases.forEach { t in
             try testHelperDecimalCase(t)
         }
     }
-    
+
     func testHelperDecimalCase(_ d: Decimal) throws {
         let data = d.datatypeValue
         let decimal = Decimal.fromDatatypeValue(data)
         XCTAssertEqual(decimal, d)
     }
-    
+
     func testHelperColor() throws {
         let testCases = [Color]([.black, .blue, .brown, .red, .init(red: 0.95, green: 0.13, blue: 0.55)])
         try testCases.forEach { c in
             try testHelperColorCase(c)
         }
     }
-    
+
     func testHelperColorCase(_ c: Color) throws {
         let data = c.datatypeValue
         let color = Color.fromDatatypeValue(data)
@@ -188,12 +190,12 @@ extension CGFloat {
     func floor(_ digit: Int = 5) -> CGFloat {
         if digit <= 0 { return self }
         var (up, down) = (CGFloat(1), CGFloat(1))
-        for _ in 0 ..< digit {
+        for _ in 0..<digit {
             up *= 10
             down *= 0.1
         }
-        
-        return CGFloat(Int(self*up.rounded()-0.5))*down
+
+        return CGFloat(Int(self * up.rounded() - 0.5)) * down
     }
 }
 
@@ -208,20 +210,22 @@ extension Element: Model {
     static let id = Expression<Int64>("id")
     static let name = Expression<String>("name")
     static let value = Expression<Int>("value")
-    
+
     static let primaryKey: Expression<Int64> = id
     var primaryKey: Int64 { id }
-    
+
     static func migrate(_ conn: DB) throws {
-        try conn.run(table.create(ifNotExists: true) { t in
-            t.column(id, primaryKey: .autoincrement)
-            t.column(name, unique: true)
-            t.column(value)
-        })
-        
+        try conn.run(
+            table.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: .autoincrement)
+                t.column(name, unique: true)
+                t.column(value)
+            }
+        )
+
         try conn.run(table.createIndex(name, ifNotExists: true))
     }
-    
+
     static func parse(_ r: Row) throws -> Element {
         return Element(
             id: try r.get(id),
@@ -233,14 +237,84 @@ extension Element: Model {
     func primaryKeySetter() -> Setter? {
         return nil
     }
-    
+
     func valuesSetter() -> [Setter] {
         return [
             Element.name <- name,
-            Element.value <- value
+            Element.value <- value,
         ]
     }
 }
 
 struct TestDao: BasicDao {}
 extension TestDao: BasicRepository {}
+
+struct TestRawElement: Codable {
+    var id: Int64
+    var name: String
+    var value: Int
+    var createdAt: Date
+    var updatedAt: Date
+
+    static let tableName: String = "test_raw_elements"
+}
+
+@Test func testExecute() async throws {
+    let db = Sworm.setup(mock: true)
+    var err: Error? = nil
+    do {
+        try db.execute(
+            """
+            CREATE TABLE IF NOT EXISTS `?` (
+                `id` INTEGER PRIMARY KEY,
+                `name` TEXT,
+                `value` INTEGER,
+                `created_at` DATETIME,
+                `updated_at` DATETIME
+            )
+            """,
+            TestRawElement.tableName
+        )
+    } catch {
+        err = error
+    }
+
+    #expect(err == nil)
+
+    let now = Date()
+    do {
+        try db.execute(
+            """
+            INSERT INTO `?` (`name`, `value`, `created_at`, `updated_at`) VALUES (?, ?, ?, ?)
+            """,
+            TestRawElement.tableName,
+            "Test",
+            1,
+            now,
+            now
+        )
+    } catch {
+        err = error
+    }
+
+    #expect(err == nil)
+
+    var result: [TestRawElement] = []
+    do {
+        result = try db.execute(
+            """
+            SELECT * FROM `?`
+            """,
+            TestRawElement.tableName
+        )
+    } catch {
+        err = error
+    }
+
+    #expect(err == nil)
+    #expect(result.count == 1)
+    #expect(result[0].name == "Test")
+    #expect(result[0].value == 1)
+    #expect(abs(result[0].createdAt.timeIntervalSince1970 - now.timeIntervalSince1970) < 1.0)
+    #expect(abs(result[0].updatedAt.timeIntervalSince1970 - now.timeIntervalSince1970) < 1.0)
+}
